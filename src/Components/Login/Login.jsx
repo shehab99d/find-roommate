@@ -1,44 +1,63 @@
 import React, { useContext } from 'react';
-import { NavLink, useNavigate } from 'react-router';
+import { NavLink, useNavigate, useLocation } from 'react-router';
 import { FcGoogle } from 'react-icons/fc';
 import { AuthContext } from '../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 
 const Login = () => {
-    const navigate = useNavigate()
-    const { login } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    // আগের পেজের path ধরে রাখছি
+    const from = location.state?.from || "/";
+
+    const { login, signInGoogle } = useContext(AuthContext);
+
     const handleLoginButton = e => {
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
 
         login(email, password)
             .then(result => {
-                console.log(result);
                 Swal.fire({
-                    title: "Drag me!",
+                    title: "Login Successful!",
                     icon: "success",
-                    draggable: true
+                    timer: 1500,
+                    showConfirmButton: false
                 }).then(() => {
-                    navigate('/')
-                })
+                    navigate(from, { replace: true });  // আগের পেজে রিডাইরেক্ট
+                });
             })
             .catch((error) => {
-                const errorMessage = error.message;
                 Swal.fire({
                     icon: "error",
                     title: "Oops...",
-                    text: {errorMessage},
-                    footer: '<a href="#">Why do I have this issue?</a>'
+                    text: error.message,
                 });
             });
     };
 
     const handleGoogleSignIn = () => {
-
-        console.log("Google sign in clicked");
+        signInGoogle()
+            .then(result => {
+                Swal.fire({
+                    title: "Google Sign-In Successful!",
+                    icon: "success",
+                    timer: 1500,
+                    showConfirmButton: false
+                }).then(() => {
+                    navigate(from, { replace: true });  // আগের পেজে রিডাইরেক্ট
+                });
+            })
+            .catch((error) => {
+                Swal.fire({
+                    icon: "error",
+                    title: "Google Sign-In Failed!",
+                    text: error.message
+                });
+            });
     };
 
     return (
@@ -47,10 +66,16 @@ const Login = () => {
                 <div className="card-body">
                     <form onSubmit={handleLoginButton} className="fieldset">
                         <label className="label">Email</label>
-                        <input type="email" className="input" name='email' placeholder="Email" />
+                        <input type="email" className="input" name='email' placeholder="Email" required />
+
                         <label className="label">Password</label>
-                        <input type="password" name='password' className="input" placeholder="Password" />
-                        <div>New to this website?? <NavLink to='/signup' className='text-blue-500'>SignUp</NavLink></div>
+                        <input type="password" name='password' className="input" placeholder="Password" required />
+
+                        <div className='mt-2'>
+                            New to this website?{" "}
+                            <NavLink to='/signup' className='text-blue-500 hover:underline'>Sign Up</NavLink>
+                        </div>
+
                         <button className="btn btn-neutral mt-4 w-full">Login</button>
                     </form>
 
