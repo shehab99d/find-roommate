@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { NavLink } from "react-router";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const Navbar = () => {
+    const { user } = useContext(AuthContext)
+    console.log(user);
+    
     const [menuOpen, setMenuOpen] = useState(false);
-    const user = null; // ইউজার লগইন না থাকলে null, থাকলে user object
-
     return (
         <nav className="bg-base-100 shadow-md sticky top-0 z-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -53,18 +56,22 @@ const Navbar = () => {
 
                         {!user ? (
                             <>
-                                <a
-                                    href="/login"
-                                    className="btn btn-sm btn-outline btn-primary px-5 py-2 rounded-lg hover:bg-primary hover:text-white transition duration-300"
+                                <NavLink
+                                    to="/login"
+                                    className={({ isActive }) =>
+                                        `btn btn-sm btn-outline btn-primary px-5 py-2 rounded-lg transition duration-300 ${isActive ? "bg-primary text-white" : "hover:bg-primary hover:text-white"
+                                        }`
+                                    }
                                 >
                                     Login
-                                </a>
-                                <a
-                                    href="/signup"
+                                </NavLink>
+
+                                <NavLink
+                                    to='/signup'
                                     className="btn btn-sm btn-primary ml-3 px-5 py-2 rounded-lg hover:bg-primary-focus transition duration-300"
                                 >
-                                    Signup
-                                </a>
+                                    SignUp
+                                </NavLink>
                             </>
                         ) : (
                             <div className="flex items-center space-x-3 cursor-pointer">
