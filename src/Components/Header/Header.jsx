@@ -35,7 +35,7 @@ const Header = () => {
                                 Browse Listings
                             </button>
                             <button
-                                onClick={() => handleProtectedRoute("/add-listing")}
+                                onClick={() => handleProtectedRoute("/Add-To-Find-Roommate")}
                                 className="btn btn-outline btn-primary px-6 py-3 text-base sm:text-lg"
                             >
                                 Add Your Listing

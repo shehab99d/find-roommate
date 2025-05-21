@@ -3,10 +3,13 @@ import Root from "../Root/Root";
 import Home from "../Home/Home";
 import Login from "../Login/Login";
 import SignUp from "../Signup/SignUp";
-import Listing from "../Listing/Listing";
-import AddListing from "../AddListing/AddListing";
-import BrowseListing from "../BrowseListing/BrowseListing";
+import Listing from "../Listing/MyListings";
+
+import BrowseListing from "../BrowseListing/BrowseListings";
 import AddToFindRoommate from "../AddToFindRoommate/AddToFindRoommate";
+import ListDetails from "../ListDetails/ListDetails";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import UpdateListing from "../UpdateListing/UpdateListing";
 
 const router = createBrowserRouter([
     {
@@ -31,16 +34,22 @@ const router = createBrowserRouter([
                 element: <Listing></Listing>
             },
             {
-                path: 'add-listing',
-                element: <AddListing></AddListing>
+                path: 'details/:id',
+                element: <PrivateRoute>
+                    <ListDetails></ListDetails>
+                </PrivateRoute>
             },
             {
                 path: 'browse-listing',
                 element: <BrowseListing></BrowseListing>
             },
             {
-                path:'Add-To-Find-Roommate',
+                path: 'Add-To-Find-Roommate',
                 element: <AddToFindRoommate></AddToFindRoommate>
+            },
+            {
+                path: 'update-listing/:id',
+                element: <UpdateListing></UpdateListing>
             }
         ]
     },
