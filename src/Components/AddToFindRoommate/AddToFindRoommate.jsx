@@ -38,14 +38,14 @@ const AddToFindRoommate = () => {
             .then(res => res.json())
             .then(data => {
                 console.log('after adding list', data);
-                if (data.insertedId) {  // যদি insertedId পাওয়া যায়
+                if (data.insertedId) { 
                     Swal.fire({
                         icon: 'success',
                         title: 'Roommate Post Added!',
                         text: `Your listing has been successfully submitted. ID: ${data.insertedId}`,
                     });
 
-                    // Reset form after success
+                  
                     setFormData({
                         title: '',
                         location: '',
@@ -78,7 +78,7 @@ const AddToFindRoommate = () => {
 
     return (
         <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md mt-10">
-            <h2 className="text-2xl font-bold mb-6 text-center">Add Roommate Listing</h2>
+            <h2 className="text-2xl font-bold text-black mb-6 text-center">Add Roommate Listing</h2>
             <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input
                     type="text"
@@ -94,7 +94,7 @@ const AddToFindRoommate = () => {
                     type="text"
                     name="location"
                     placeholder="Location"
-                    className="input input-bordered w-full"
+                    className="input border-2 input-bordered w-full"
                     value={formData.location}
                     onChange={handleChange}
                     required
@@ -157,20 +157,20 @@ const AddToFindRoommate = () => {
                     type="text"
                     value={user?.displayName}
                     readOnly
-                    className="input input-bordered w-full bg-gray-100"
+                    className="input input-bordered w-full dark:text-black bg-gray-100"
                 />
 
                 <input
                     type="email"
                     value={user?.email}
                     readOnly
-                    className="input input-bordered w-full bg-gray-100"
+                    className="input dark:text-black input-bordered w-full bg-gray-100"
                 />
 
                 <textarea
                     name="description"
                     placeholder="Description"
-                    className="textarea textarea-bordered w-full md:col-span-2"
+                    className="textarea dark:bg-white dark:text-black textarea-bordered w-full md:col-span-2"
                     value={formData.description}
                     onChange={handleChange}
                     required

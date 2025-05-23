@@ -29,10 +29,11 @@ const Animated = () => {
                 <h2 className="text-4xl font-extrabold text-gradient bg-clip-text text-yellow-400 mb-6">
                     Find Your Perfect Roommate
                 </h2>
-                <p className="text-gray-600 text-lg leading-relaxed tracking-wide font-light">
+                <p style={{color: 'var-(--main-text-color)'}} className=" text-lg leading-relaxed tracking-wide font-light">
                     Connect with like-minded people who share your lifestyle and preferences.
                     Our platform helps you find trustworthy roommates in your preferred location with ease and security.
                 </p>
+
             </div>
 
 

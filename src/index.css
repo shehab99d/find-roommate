@@ -4,3 +4,16 @@
 /* @tailwind base;
 @tailwind componente;
 @tailwind utilities; */
+
+
+
+:root {
+  --main-text-color: #1f2937; 
+  --bg-color: #ffffff;
+}
+
+.dark {
+  --main-text-color: #ffeaa7; 
+  --bg-color: #121212;
+}
+

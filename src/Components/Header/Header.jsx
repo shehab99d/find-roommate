@@ -24,7 +24,7 @@ const Header = () => {
                         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary leading-tight">
                             Find Your Perfect Roommate
                         </h1>
-                        <p className="py-6 text-base sm:text-lg text-gray-600 max-w-lg mx-auto md:mx-0">
+                        <p className="py-6 text-base sm:text-lg  max-w-lg mx-auto md:mx-0">
                             Easily connect with potential roommates and make your housing search smooth and simple.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
