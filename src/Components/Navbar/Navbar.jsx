@@ -3,6 +3,8 @@ import { NavLink, useNavigate } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from 'sweetalert2';
 
+
+
 const Navbar = () => {
     const { logOut, loading, user } = useContext(AuthContext);
     const [menuOpen, setMenuOpen] = useState(false);
@@ -38,7 +40,6 @@ const Navbar = () => {
             });
     };
 
-
     const handleProtectedRoute = (path) => {
         if (user) {
             navigate(path);
@@ -58,7 +59,8 @@ const Navbar = () => {
                         RoommateFinder
                     </NavLink>
 
-                    <div className="hidden md:flex space-x-8 items-center text-lg font-medium">
+                    {/* Desktop Menu */}
+                    <div className="hidden md:flex space-x-6 items-center text-lg font-medium">
                         <NavLink to="/" className="hover:text-primary-focus transition">Home</NavLink>
 
                         <button onClick={() => handleProtectedRoute("/Add-To-Find-Roommate")} className="hover:text-primary-focus transition">
@@ -72,6 +74,9 @@ const Navbar = () => {
                         <button onClick={() => handleProtectedRoute("/listing")} className="hover:text-primary-focus transition">
                             My Listings
                         </button>
+
+                       
+                       
 
                         {!user ? (
                             <>
@@ -88,6 +93,7 @@ const Navbar = () => {
                         )}
                     </div>
 
+                    {/* Mobile Toggle Button */}
                     <div className="md:hidden flex items-center">
                         <button onClick={() => setMenuOpen(!menuOpen)} className="btn btn-square btn-ghost">
                             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -102,6 +108,7 @@ const Navbar = () => {
                 </div>
             </div>
 
+            {/* Mobile Menu */}
             {menuOpen && (
                 <div className="md:hidden bg-base-100 px-6 pt-4 pb-6 space-y-4">
                     <NavLink to="/" className="block py-2 text-lg font-medium hover:text-primary">Home</NavLink>
@@ -112,6 +119,9 @@ const Navbar = () => {
                     <button onClick={() => handleProtectedRoute("/listing")} className="block w-full text-left py-2 text-lg hover:text-primary">
                         My Listings
                     </button>
+
+                    
+
                     {!user ? (
                         <>
                             <NavLink to="/login" className="btn btn-outline btn-primary w-full">Login</NavLink>

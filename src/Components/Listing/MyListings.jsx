@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
 import { useNavigate } from 'react-router';
+import Swal from 'sweetalert2';
 
 const MyListings = () => {
   const { user, loading } = useContext(AuthContext);
@@ -21,20 +22,37 @@ const MyListings = () => {
   }, [user, loading, navigate]);
 
   const handleDelete = (id) => {
-    const confirmDelete = window.confirm('Are you sure you want to delete this listing?');
-    if (!confirmDelete) return;
-
-    fetch(`http://localhost:3000/delete-listing/${id}`, {
-      method: 'DELETE',
-    })
-      .then(res => res.json())
-      .then(data => {
-        if (data.deletedCount > 0) {
-          alert('Listing deleted successfully');
-          setListings(prev => prev.filter(listing => listing._id !== id));
-        }
-      })
-      .catch(err => console.error(err));
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:3000/delete-listing/${id}`, {
+          method: 'DELETE',
+        })
+          .then(res => res.json())
+          .then(data => {
+            if (data.deletedCount > 0) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your listing has been deleted.",
+                icon: "success"
+              });
+              // এখানে correction: callback function হিসেবে দিতে হবে
+              setListings(prev => prev.filter(listing => listing._id !== id));
+            }
+          })
+          .catch(err => {
+            console.error(err);
+            Swal.fire("Error", "Something went wrong while deleting.", "error");
+          });
+      }
+    });
   };
 
   if (loading) {

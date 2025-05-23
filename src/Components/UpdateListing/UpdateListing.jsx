@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router';
+import { useNavigate, useParams, } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const UpdateListing = () => {
@@ -33,20 +33,35 @@ const UpdateListing = () => {
         })
             .then(res => res.json())
             .then(data => {
-                if (data.modifiedCount > 0) {
+                if (data.modifiedCount) {
                     Swal.fire({
-                        title: "Updated Successfully",
+                        title: "Updated Successfully!",
                         icon: "success",
-                        draggable: true
+                        showConfirmButton: false,
+                        timer: 1500
+                    }).then(() => {
+                        navigate('/listing');
                     });
-                    navigate('/listing');
                 }
+            })
+            .catch(err => {
+                console.error("Update error:", err);
+                Swal.fire({
+                    title: "Error!",
+                    text: "Something went wrong while updating.",
+                    icon: "error"
+                });
             });
     };
+
+
+
 
     if (!listing) {
         return <div>Loading...</div>;
     }
+
+
 
     return (
         <div className="max-w-xl mx-auto mt-10">

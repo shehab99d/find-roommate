@@ -1,0 +1,122 @@
+[
+  {
+    "id": "1",
+    "name": "New York",
+    "img": "https://i.ibb.co/ZpGyjDxv/new-york-best-pic.jpg",
+    "hotelCost": "$150/night (avg)",
+    "description": "A fast-paced city known for its culture, landmarks and expensive lifestyle.",
+    "highlights": ["Times Square", "Central Park", "Expensive Rent"]
+  },
+  {
+    "id": "2",
+    "name": "Los Angeles",
+    "img": "https://i.ibb.co/qFsYWLq7/i-Stock-1463288473-1.jpg",
+    "hotelCost": "$130/night (avg)",
+    "description": "Famous for Hollywood, beaches and warm climate.",
+    "highlights": ["Hollywood", "Santa Monica", "Traffic Jams"]
+  },
+  {
+    "id": "3",
+    "name": "Chicago",
+    "img": "https://i.ibb.co/v63ZVZ4Z/intercontinental-chicago-5377570366-2x1.webp",
+    "hotelCost": "$110/night (avg)",
+    "description": "A cultural hub with amazing architecture and food.",
+    "highlights": ["Navy Pier", "Deep Dish Pizza", "Windy Weather"]
+  },
+  {
+    "id": "4",
+    "name": "Japan",
+    "img": "https://i.ibb.co/tGJ0vpg/Japan-2107x1406.jpg",
+    "hotelCost": "$100/night (avg)",
+    "description": "A beautiful country blending tradition and technology.",
+    "highlights": ["Mount Fuji", "Sushi", "Polite Culture"]
+  },
+  {
+    "id": "5",
+    "name": "Miami",
+    "img": "https://i.ibb.co/RGxW1Yp6/339657-Downtown-Miami.webp",
+    "hotelCost": "$120/night (avg)",
+    "description": "A beach paradise with vibrant nightlife and Cuban influence.",
+    "highlights": ["Miami Beach", "Art Deco", "Warm Weather"]
+  },
+  {
+    "id": "6",
+    "name": "San Francisco",
+    "img": "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=600&q=80",
+    "hotelCost": "$140/night (avg)",
+    "description": "Tech capital with steep hills and the Golden Gate Bridge.",
+    "highlights": ["Golden Gate", "Silicon Valley", "Foggy Views"]
+  },
+  {
+    "id": "7",
+    "name": "Istanbul",
+    "img": "https://i.ibb.co/cK03YfSm/istanbul.jpg",
+    "hotelCost": "$80/night (avg)",
+    "description": "A historic city connecting Europe and Asia.",
+    "highlights": ["Blue Mosque", "Bazaars", "Street Food"]
+  },
+  {
+    "id": "8",
+    "name": "Boston",
+    "img": "https://i.ibb.co/XZ1XLGNW/Skyline-Boston.webp",
+    "hotelCost": "$115/night (avg)",
+    "description": "Known for universities, history, and vibrant neighborhoods.",
+    "highlights": ["Harvard", "Freedom Trail", "Historic Charm"]
+  },
+  {
+    "id": "9",
+    "name": "Denver",
+    "img": "https://i.ibb.co/V0s1kdmN/denver-best.webp",
+    "hotelCost": "$90/night (avg)",
+    "description": "A city surrounded by mountains, great for outdoors.",
+    "highlights": ["Rocky Mountains", "Craft Beer", "Hiking Trails"]
+  },
+  {
+    "id": "10",
+    "name": "Atlanta",
+    "img": "https://i.ibb.co/DP0V2Dh9/Alanta-Lithuania-panoramio-1.jpg",
+    "hotelCost": "$100/night (avg)",
+    "description": "A southern city full of charm, music, and history.",
+    "highlights": ["Coca-Cola Museum", "MLK History", "Southern Cuisine"]
+  },
+  {
+    "id": "11",
+    "name": "Austin",
+    "img": "https://i.ibb.co/Z6Y48Xmc/austin-best.jpg",
+    "hotelCost": "$105/night (avg)",
+    "description": "Live music capital with tech growth and outdoor fun.",
+    "highlights": ["Live Music", "BBQ", "Tech Startups"]
+  },
+  {
+    "id": "12",
+    "name": "Portland",
+    "img": "https://i.ibb.co/LDcv2yJW/portland.webp",
+    "hotelCost": "$95/night (avg)",
+    "description": "Eco-friendly, hipster city with great coffee and greenery.",
+    "highlights": ["Food Trucks", "Biking", "Hip Culture"]
+  },
+  {
+    "id": "13",
+    "name": "Philadelphia",
+    "img": "https://i.ibb.co/XfQh2BWT/seattle-Getty-Images-522616386.webp",
+    "hotelCost": "$100/night (avg)",
+    "description": "Historic city known for Liberty Bell and cheesesteaks.",
+    "highlights": ["Liberty Bell", "Philly Cheesesteak", "History"]
+  },
+  {
+    "id": "14",
+    "name": "Las Vegas",
+    "img": "https://i.ibb.co/hFW0QJWf/Las-Vegas-banner-0.jpg",
+    "hotelCost": "$110/night (avg)",
+    "description": "Entertainment capital full of casinos and nightlife.",
+    "highlights": ["Casinos", "Shows", "Desert Vibes"]
+  },
+  {
+    "id": "15",
+    "name": "San Diego",
+    "img": "https://i.ibb.co/HpFwcL2k/san-Dieog-best.webp",
+    "hotelCost": "$120/night (avg)",
+    "description": "Sunny city with amazing beaches and family attractions.",
+    "highlights": ["San Diego Zoo", "Beaches", "Relaxed Lifestyle"]
+  }
+]

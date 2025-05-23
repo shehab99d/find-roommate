@@ -10,6 +10,8 @@ import AddToFindRoommate from "../AddToFindRoommate/AddToFindRoommate";
 import ListDetails from "../ListDetails/ListDetails";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import UpdateListing from "../UpdateListing/UpdateListing";
+import Cities from "../cities-details/Cities";
+import BookNow from "../BookNow/BookNow";
 
 const router = createBrowserRouter([
     {
@@ -50,6 +52,20 @@ const router = createBrowserRouter([
             {
                 path: 'update-listing/:id',
                 element: <UpdateListing></UpdateListing>
+            },
+            {
+                path: 'listings/city/:id',
+                loader: async ({ params }) => {
+                    const res = await fetch('/Cities.json');
+                    const cities = await res.json();
+                    const city = cities.find(city => city.id === params.id);
+                    return city;
+                },
+                element: <Cities />
+            },
+            {
+                path: 'listing/city/:id',
+                element: <BookNow></BookNow>
             }
         ]
     },

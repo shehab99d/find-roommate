@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router';
-import { AuthContext } from '../Provider/AuthProvider';
+import { Link } from 'react-router-dom'; 
 const BrowseListings = () => {
-    // const { user } = useContext(AuthContext);
     const [listings, setListings] = useState([]);
 
     useEffect(() => {
@@ -13,7 +11,6 @@ const BrowseListings = () => {
             })
             .catch(error => console.error('Error fetching listings:', error));
     }, []);
-
 
     return (
         <div className="max-w-7xl mx-auto p-6">
@@ -33,7 +30,8 @@ const BrowseListings = () => {
                                 <p><strong>Lifestyle:</strong> {listing.lifestyle}</p>
                                 <p><strong>Availability:</strong> {listing.availability}</p>
                                 <p className="mt-2"><strong>Description:</strong> {listing.description}</p>
-                                <p className="mt-4"><strong>Contact:</strong> <span className="text-primary font-medium">{listing.contact}</span></p>
+
+                            
                                 <p className="text-sm text-gray-400 mt-4 italic">
                                     Posted by <span className="font-semibold">{listing.userName}</span> ({listing.userEmail})
                                 </p>
