@@ -15,7 +15,7 @@ const MyListings = () => {
       return;
     }
 
-    fetch(`http://localhost:3000/my-listings?email=${user.email}`)
+    fetch(`https://roommate-found-server.vercel.app/my-listings?email=${user.email}`)
       .then(res => res.json())
       .then(data => setListings(data))
       .catch(err => console.error(err));
@@ -32,7 +32,7 @@ const MyListings = () => {
       confirmButtonText: "Yes, delete it!"
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/delete-listing/${id}`, {
+        fetch(`https://roommate-found-server.vercel.app/delete-listing/${id}`, {
           method: 'DELETE',
         })
           .then(res => res.json())

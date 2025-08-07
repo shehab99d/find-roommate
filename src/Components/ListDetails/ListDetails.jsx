@@ -12,7 +12,7 @@ const ListDetails = () => {
   // Fetch listing details from backend
   useEffect(() => {
     setLoading(true);
-    fetch(`http://localhost:3000/listings/${id}`)
+    fetch(`https://roommate-found-server.vercel.app/listings/${id}`)
       .then(res => res.json())
       .then(data => {
         setListing(data);
@@ -37,7 +37,7 @@ const ListDetails = () => {
       likedUsers: [...(prev.likedUsers || []), user.email]
     }));
 
-    fetch(`http://localhost:3000/listings/${id}/like`, {
+    fetch(`https://roommate-found-server.vercel.app/listings/${id}/like`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ userEmail: user.email }),

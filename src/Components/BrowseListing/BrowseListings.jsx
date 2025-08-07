@@ -4,7 +4,7 @@ const BrowseListings = () => {
     const [listings, setListings] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:3000/listings')
+        fetch('https://roommate-found-server.vercel.app/listings')
             .then(res => res.json())
             .then(data => {
                 setListings(data);

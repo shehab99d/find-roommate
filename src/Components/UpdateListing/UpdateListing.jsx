@@ -8,7 +8,7 @@ const UpdateListing = () => {
     const [listing, setListing] = useState(null);
 
     useEffect(() => {
-        fetch(`http://localhost:3000/listings/${id}`)
+        fetch(`https://roommate-found-server.vercel.app/listings/${id}`)
             .then(res => res.json())
             .then(data => setListing(data));
     }, [id]);
@@ -24,7 +24,7 @@ const UpdateListing = () => {
             availability: form.availability.value,
         };
 
-        fetch(`http://localhost:3000/update-listing/${id}`, {
+        fetch(`https://roommate-found-server.vercel.app/update-listing/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
